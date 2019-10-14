@@ -1,6 +1,8 @@
 package com.fknaus.LivingAsOneDemo.service;
 
 import com.fknaus.LivingAsOneDemo.model.Photo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,8 @@ public final class HelperService {
     public static String DATES_FILE;
     public static String PICTURE_FOLDER;
     public static String STANDARD_DATE_FORMAT = "yyyy-MM-dd";
+
+    static final Logger logger = LoggerFactory.getLogger(HelperService.class);
 
     @Value("${roverService.pictureFolder}")
     public void setPictureFolder(String pictureFolder) {
@@ -50,7 +54,7 @@ public final class HelperService {
                 String result = resultFormat.format(parsedDate);
                 return result;
             } catch (ParseException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
             }
         }
         return "";

@@ -31,10 +31,6 @@ The exercise we’d like to see is to use the NASA API described here to build a
     - Requires Java version 8 or later and Maven to be installed
     - Run `mvn spring-boot:run` to start http-server on localhost port 8081
     - Run `mvn test` to run unit tests
-- To run in Docker container:
-    - Requires Docker to be installed locally
-    - Run `docker build -t <image-name-of-your-choice> .` to build Docker image
-    - Run `docker run -d -p 8081:8081 <image-name-of-your-choice>` to run image in a container
 
 ---
 ## Endpoints:
